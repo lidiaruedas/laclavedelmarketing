@@ -11,10 +11,11 @@ class Database
     private ?PDO $connection = null;
 
     // Configuración de base de datos
-    private string $host = 'localhost';
-    private string $database = 'laclavedelmarketing';
-    private string $username = 'root';
-    private string $password = '';
+    private string $host = 'la-clave-del-marketing-mysqllcdm-szol9h';
+    private int $port = 3306;
+    private string $database = 'lcdm';
+    private string $username = 'lcdm_user';
+    private string $password = 'Sevilla_2019';
     private string $charset = 'utf8mb4';
 
     /**
@@ -42,7 +43,7 @@ class Database
     private function connect(): void
     {
         try {
-            $dsn = "mysql:host={$this->host};dbname={$this->database};charset={$this->charset}";
+            $dsn = "mysql:host={$this->host};port={$this->port};dbname={$this->database};charset={$this->charset}";
 
             $options = [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
